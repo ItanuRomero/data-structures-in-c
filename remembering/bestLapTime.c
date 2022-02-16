@@ -37,9 +37,9 @@ int main()
     
     meanTime = sum / LAPS;
     
-    printf("Melhor tempo: %f | Ocorreu na volta: %d\n", bestLapTime, bestLapNumber);
+    printf("Melhor tempo: %f \nOcorreu na volta: %d\n", bestLapTime, bestLapNumber);
     printf("Tempo médio das voltas %f\n", meanTime);
-    printf("Todas as voltas: ");
+    printf("Todas as voltas: \n");
     for (int lap = 0; lap < LAPS; lap++) {
         printf(" %f |", allLaps[lap]);
     }
