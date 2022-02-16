@@ -15,8 +15,10 @@ int main()
     int lap = 0, bestLapNumber, totalLaps = 3;
     
     while (lap < totalLaps) {
-        printf("Tempo da volta: ");
-        scanf("%f", &lapTime);
+        do {
+            printf("Tempo da volta: ");
+            scanf("%f", &lapTime);
+        } while (lapTime < 0 );
         if (lap == 0) {
             bestLapTime = lapTime;
             bestLapNumber = lap + 1;
