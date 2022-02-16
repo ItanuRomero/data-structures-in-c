@@ -9,12 +9,14 @@ Tempo médio das 10 voltas;
 
 #include <stdio.h>
 
+#define LAPS 3
+
 int main()
 {
     float sum, lapTime, bestLapTime, meanTime;
-    int lap = 0, bestLapNumber, totalLaps = 3;
+    int lap = 0, bestLapNumber;
     
-    while (lap < totalLaps) {
+    while (lap < LAPS) {
         do {
             printf("Tempo da volta: ");
             scanf("%f", &lapTime);
@@ -30,7 +32,7 @@ int main()
         lap++;
     }
     
-    meanTime = sum / totalLaps;
+    meanTime = sum / LAPS;
     
     printf("Melhor tempo: %f | Ocorreu na volta: %d\n", bestLapTime, bestLapNumber);
     printf("Tempo médio das voltas %f", meanTime);
