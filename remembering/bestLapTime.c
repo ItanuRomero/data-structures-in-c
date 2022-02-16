@@ -13,29 +13,36 @@ Tempo médio das 10 voltas;
 
 int main()
 {
-    float sum, lapTime, bestLapTime, meanTime;
+    float sum, bestLapTime, meanTime;
+    float allLaps[LAPS];
     int lap = 0, bestLapNumber;
     
     while (lap < LAPS) {
         do {
             printf("Tempo da volta: ");
-            scanf("%f", &lapTime);
-        } while (lapTime < 0 );
+            scanf("%f", &allLaps[lap]);
+        } while (allLaps[lap] < 0 );
+        
         if (lap == 0) {
-            bestLapTime = lapTime;
+            bestLapTime = allLaps[lap];
             bestLapNumber = lap + 1;
-        } else if (lapTime < bestLapTime) {
-            bestLapTime = lapTime;
+        } else if (allLaps[lap] < bestLapTime) {
+            bestLapTime = allLaps[lap];
             bestLapNumber = lap + 1;
         }
-        sum = sum + lapTime;
+        sum = sum + allLaps[lap];
         lap++;
+        
     }
     
     meanTime = sum / LAPS;
     
     printf("Melhor tempo: %f | Ocorreu na volta: %d\n", bestLapTime, bestLapNumber);
-    printf("Tempo médio das voltas %f", meanTime);
+    printf("Tempo médio das voltas %f\n", meanTime);
+    printf("Todas as voltas: ");
+    for (int lap = 0; lap < LAPS; lap++) {
+        printf(" %f |", allLaps[lap]);
+    }
     
     return 0;
 }
