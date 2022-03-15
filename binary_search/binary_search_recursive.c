@@ -46,4 +46,3 @@ int main() {
 		printf("\nForam feitas %d buscas.\n", *times);
 	}
 }
-
