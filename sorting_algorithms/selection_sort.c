@@ -15,7 +15,7 @@ void selection_sort(int vet[], int size) {
 	for(fixed = 0; fixed < size - 1; fixed++) {
 		smaller = vet[fixed];
 		smaller_position = fixed;
-		for(position = fixed; position < size; position++) {
+		for(position = fixed + 1; position < size; position++) {
 			if (vet[position] < smaller) {
 				smaller = vet[position];
 				smaller_position = position;
