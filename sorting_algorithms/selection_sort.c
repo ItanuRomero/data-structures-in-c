@@ -36,6 +36,5 @@ int main() {
     print_vector(array, SIZE);
     selection_sort(array, SIZE);
     
-    
     return 0;
 }
