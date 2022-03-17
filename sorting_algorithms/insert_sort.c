@@ -18,13 +18,15 @@ void insert_sort(int vet[]) {
 			if (number < vet[position]) {
 				vet[position + 1] = vet[position];
 				vet[position] = number;
+			} else {
+				break;
 			}
 		}
 		print_vector(vet);
 	}
 }
 
-int main() {
+int main() { 
     int array[] = {23, 4, 67, -8, -5, 54, 21, 87, 2, -7};
     print_vector(array);
     insert_sort(array);
