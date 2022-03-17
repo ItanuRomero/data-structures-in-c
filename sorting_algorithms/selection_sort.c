@@ -33,7 +33,6 @@ void selection_sort(int vet[], int size) {
 
 int main() {
     int array[] = {23, 4, 67, -8, -5, 54, 21, 87, 2, -7};
-    int positions = SIZE, continueTo, cache, num;
     print_vector(array, SIZE);
     selection_sort(array, SIZE);
     
