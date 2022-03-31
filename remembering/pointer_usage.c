@@ -31,4 +31,5 @@ int main() {
 	printf("Valor ptrA: %d\n", ptrA);
 	printf("Valor ptrB: %d\n", ptrB);
 	
+	return 0;
 }
