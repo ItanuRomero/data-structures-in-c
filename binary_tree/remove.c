@@ -79,7 +79,18 @@ Node* biggerOnLeft(Node* n) {
 }
 
 Node* removeNode(Node* n, Node* parent, int valueToRemove) {
-	if (valueToRemove == n->value) {
+	if (n == NULL) {
+		printf("Empty tree.\n\n");
+	} else if (valueToRemove == n->value) {
+		if (parent == NULL) {
+			Node* aux =  (Node*) malloc(sizeof(Node));
+			aux = NULL;
+			aux = biggerOnLeft(n->left);
+			removeNode(n, NULL, aux->value);
+			n->value = aux->value;
+			aux = NULL;
+			return n;
+		} 
 		if (n->left == NULL && n->right == NULL) {
 			if (n->value < parent->value) {
 				parent->left = NULL;
@@ -146,9 +157,9 @@ void main() {
     printf("\ndepois de inserir: ");
     preOrder(n);
     
-	removeNode(n, NULL, 30);
+	removeNode(n, NULL, 20);
     
-	printf("\ndepois de remover o 30: ");
+	printf("\ndepois de remover: ");
 	preOrder(n);
 	
 	freeAll(n);
