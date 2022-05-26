@@ -16,8 +16,16 @@ int discoverPosition(int value) {
 void print_vector(int size, int vector[FINAL]) {
 	int i;
 	printf("[");
+	Value* aux = (Value*) malloc(sizeof(Value));
 	for (i = 0; i < size; i++) {
-		printf("%d, ", vector[i]);
+		if (vector[i] != NULL) {
+			aux = vector[i];
+			printf("%d ", aux->value);
+			aux = aux->next;
+			printf("(%d) ,", aux->value);
+		} else {
+			printf("%d, ", vector[i]);
+		}
 	}
 	printf("]\n");
 }
